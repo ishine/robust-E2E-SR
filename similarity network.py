@@ -8,15 +8,11 @@ Created on Fri Nov 23 16:37:00 2018
 # -*- coding: utf-8 -*-
 """
 Created on Mon Nov 19 16:30:16 2018
-
-@tsx: Administrator
-
+@tsx: Administrator 
+email: songxuetianszu@gmail.com
 based learining noise-invariant representations for robust speech recognition
 towards end2end speech recognition baesd cnn
-"""
-
-
-
+""
 
 import tensorflow as tf
 import numpy as np
@@ -24,11 +20,6 @@ import os
 import random
 import time
 os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
-
-
-# In[25]:
-
-
 def get_weight_variable(shape, name):
     w = tf.get_variable(name,
                         shape,
