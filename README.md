@@ -9,4 +9,4 @@ down dataset for building up  traiining & test set:\
 noisex-92: http://spib.linse.ufsc.br/noise.html \
  “The QUT-NOISE Databases and Protocols[Queensland University of Technology”,
 in https://doi.org/10.4225/09/58819f7a21a21
-![Image text]
+![phoneme error rate at different noises](https://github.com/songxueT/robust-E2E-SR/blob/master/fig2.png)
