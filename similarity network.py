@@ -257,14 +257,8 @@ with g1.as_default():
     with tf.variable_scope('loss_n'):
         cost_n = tf.nn.ctc_loss(labels=labels, inputs=logit_n, sequence_length=seq_len, time_major=False)
         ctc_n = tf.reduce_mean(cost_n)
-        
-        
-        
-
-        
-        
-    
-    loss_3 = ctc_n + ctc_c +1e-5*logit - 1e-3*cosin
+  
+    loss_3 = ctc_n + ctc_c +1e-4*logit 
     tf.add_to_collection('loss', loss_3)
     loss = tf.add_n(tf.get_collection('loss'))
     optimizer = tf.train.AdamOptimizer(learning_rate=LR2).minimize(loss_3)
@@ -276,11 +270,7 @@ with g1.as_default():
         decoded, log_prob = tf.nn.ctc_beam_search_decoder(tf.transpose(logit_n, [1, 0, 2]), seq_len,10)
         ler_n = tf.reduce_mean(tf.edit_distance(tf.cast(decoded[0], tf.int32), labels, True))
         
-        
-        
-        
-        
-        
+
 with tf.Session(graph=g1, config=config) as sess:
     
     tf.global_variables_initializer().run()
